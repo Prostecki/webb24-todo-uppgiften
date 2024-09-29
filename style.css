@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.todo-container {
+  width: 300px;
+  background-color: yellow;
+}
+
+.error-input {
+  background-color: red;
+}
+.passed-input {
+  background-color: green;
+}
