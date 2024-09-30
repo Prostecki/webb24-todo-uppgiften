@@ -9,13 +9,33 @@
 }
 
 .error-input {
-  background-color: red;
+  border: 1px solid red;
+  animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 .passed-input {
   background-color: green;
 }
 
-/* Example of how o use filter drop shadow on png elements*/
+/* 
+Example of how o use filter drop shadow on png elements
 .dog-img {
   background-image: url("https://png.pngtree.com/png-vector/20231019/ourmid/pngtree-white-and-brown-cute-dog-animal-png-image_10211052.png");
   width: 200px;
@@ -25,5 +45,5 @@
   margin: 5px;
   filter: drop-shadow(
     10px 10px 10px rgb(0, 0, 0, 0.5)
-  ); /* To make a shadow on border of png */
-}
+  ); /* To make a shadow on border of png
+} */
