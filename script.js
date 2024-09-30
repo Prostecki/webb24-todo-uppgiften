@@ -34,11 +34,34 @@ function addTask() {
 
 function createTask() {
   let task = document.createElement("p");
+  let checkbox = document.createElement("input");
+  checkbox.setAttribute("type", "checkbox");
+  checkbox.checked = false;
+  console.log(checkbox.checked);
+  let taskContainer = document.createElement("div");
+  taskContainer.classList.add("task-container");
+  taskContainer.appendChild(task);
+  taskContainer.appendChild(checkbox);
   task.textContent = input.value;
-  todoList.appendChild(task);
   input.value = "";
-  container.appendChild(todoList);
+  container.appendChild(taskContainer);
+
+  //when you change a state of input, you have to use "change" event listener
+  checkbox.addEventListener("change", () => {
+    isChecked(checkbox, task);
+  });
 }
+
+//To params input and element which I want to check
+function isChecked(input, element) {
+  //If input changes a state to true, element changes a style
+  if (input.checked === true) {
+    element.classList.add("isDone");
+  } else {
+    element.classList.remove("isDone");
+  }
+}
+
 // // Closure function
 // function createMember(firstName) {
 //   return function (lastName) {
