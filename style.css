@@ -14,3 +14,16 @@
 .passed-input {
   background-color: green;
 }
+
+/* Example of how o use filter drop shadow on png elements*/
+.dog-img {
+  background-image: url("https://png.pngtree.com/png-vector/20231019/ourmid/pngtree-white-and-brown-cute-dog-animal-png-image_10211052.png");
+  width: 200px;
+  height: 200px;
+  background-size: contain;
+  border: none;
+  margin: 5px;
+  filter: drop-shadow(
+    10px 10px 10px rgb(0, 0, 0, 0.5)
+  ); /* To make a shadow on border of png */
+}

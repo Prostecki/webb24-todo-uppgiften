@@ -1,6 +1,11 @@
 const input = document.querySelector("input");
 const button = document.querySelector("button");
-console.log(input, button);
+
+// Example for png drop-shadow in css
+const dogImg = document.createElement("img");
+dogImg.className = "dog-img";
+document.body.appendChild(dogImg);
+console.log(dogImg);
 
 const todoList = document.createElement("div");
 todoList.classList.add("todo-container");
