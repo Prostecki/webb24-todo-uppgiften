@@ -32,3 +32,13 @@ function addTask() {
   todoList.appendChild(taskList);
   input.value = "";
 }
+// Closure function
+function createMember(firstName) {
+  return function (lastName) {
+    console.log(firstName + " " + lastName);
+  };
+}
+
+const logWithLastName = createMember("Mark");
+console.log(logWithLastName("Smith"));
+console.log(logWithLastName("LOLKA"));
