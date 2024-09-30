@@ -1,8 +1,8 @@
 const input = document.querySelector("input");
+input.setAttribute("placeholder", "Enter any task...");
 const button = document.querySelector("button");
 const container = document.createElement("div");
 container.classList.add("container");
-// document.body.appendChild(container);
 
 const todoList = document.createElement("div");
 todoList.classList.add("todo-list");
@@ -35,6 +35,7 @@ function addTask() {
 function createTask() {
   let task = document.createElement("p");
   let checkbox = document.createElement("input");
+  checkbox.classList.add("rounded-checkbox");
   checkbox.setAttribute("type", "checkbox");
   checkbox.checked = false;
   console.log(checkbox.checked);
@@ -54,9 +55,10 @@ function createTask() {
 
 //To params input and element which I want to check
 function isChecked(input, element) {
-  //If input changes a state to true, element changes a style
+  //If input changes a state to true, element take a class from css
   if (input.checked === true) {
     element.classList.add("isDone");
+    // otherwise it removes
   } else {
     element.classList.remove("isDone");
   }
