@@ -1,9 +1,12 @@
 const input = document.querySelector("input");
 const button = document.querySelector("button");
+const container = document.createElement("div");
+container.classList.add("container");
+// document.body.appendChild(container);
 
 const todoList = document.createElement("div");
-todoList.classList.add("todo-container");
-const addTodoList = () => document.body.appendChild(todoList);
+todoList.classList.add("todo-list");
+const addTodoList = () => document.body.appendChild(container);
 
 button.addEventListener("click", (e) => {
   e.preventDefault();
@@ -24,17 +27,17 @@ function addTask() {
     //Remove an error if a text is written
     input.classList.remove("error-input");
   }
+  document.body.appendChild(container);
   createTask();
   addTodoList();
 }
 
 function createTask() {
-  let taskList = document.createElement("ol");
-  let task = document.createElement("li");
+  let task = document.createElement("p");
   task.textContent = input.value;
   todoList.appendChild(task);
-  todoList.appendChild(taskList);
   input.value = "";
+  container.appendChild(todoList);
 }
 // // Closure function
 // function createMember(firstName) {
