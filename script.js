@@ -8,6 +8,8 @@ const todoList = document.createElement("div");
 todoList.classList.add("todo-list");
 const addTodoList = () => document.body.appendChild(container);
 
+document.addEventListener("DOMContentLoaded", loadTasks);
+
 button.addEventListener("click", (e) => {
   e.preventDefault();
   addTask();
@@ -46,6 +48,7 @@ function createTask() {
   task.textContent = input.value;
   input.value = "";
   container.appendChild(taskContainer);
+  // saveTask(task); ?? Need to find out the way to fix it
 
   //when you change a state of input, you have to use "change" event listener
   checkbox.addEventListener("change", () => {
@@ -62,6 +65,19 @@ function isChecked(input, element) {
   } else {
     element.classList.remove("isDone");
   }
+}
+
+function saveTask(task) {
+  const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  tasks.push(task);
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+function loadTasks() {
+  const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  tasks.forEach((task) => {
+    createTask(task);
+  });
 }
 
 // // Closure function
